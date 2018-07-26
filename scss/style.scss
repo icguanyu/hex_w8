@@ -1,0 +1,355 @@
+$DESIE: #e63946;
+$HONEYDEW: #f1faee;
+$LIGHT_BLUE: #a8dadc;
+$QUEEN_BLUE: #457b9d;
+$SPACE_CADET: #1d3557;
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+@mixin scrollbars($size, $foreground-color, $background-color) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background: $background-color;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    cursor: pointer;
+  }
+}
+@include scrollbars(4px, $SPACE_CADET, transparent);
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  background: $QUEEN_BLUE;
+  height: 6000px;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: $HONEYDEW;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+.process_bar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 8px;
+  z-index: 1000;
+  background: $HONEYDEW;
+  .process {
+    transition: 0.5s;
+    background: $SPACE_CADET;
+    height: 8px;
+    width: 0%;
+  }
+}
+.info {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  color: $HONEYDEW;
+  font-size: 14px;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: $SPACE_CADET;
+}
+
+.wrap {
+  position: relative;
+  //width: 1024px;
+  height: 3000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.rect {
+  width: 300px;
+  height: 300px;
+  background: $HONEYDEW;
+  border-radius: 10px;
+}
+.arc {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: $SPACE_CADET;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0px 90px 180px 90px;
+  border-color: transparent transparent $DESIE transparent;
+  transform: translateY(-10px);
+}
+.start {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .triangle {
+    transform-origin: 50% 60%;
+    &::after {
+      content: "";
+      position: absolute;
+      transform-origin: 50% 80%;
+      left: -90px;
+      top: 40px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 180px 90px 0px 90px;
+      border-color: $DESIE transparent transparent transparent;
+    }
+  }
+  & > * {
+    position: absolute;
+  }
+  .welcome {
+    text-align: center;
+    color: white;
+    h1 {
+      width: 760px;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 4px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 48px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.question_area {
+  width: 1024px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  opacity: 1;
+  .q_block {
+    background: $SPACE_CADET;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    .question {
+      position: absolute;
+      width: 600px;
+      left: 0px;
+      right: 424px;
+      height: 100%;
+      padding: 15% 8%;
+      box-sizing: border-box;
+      background: $HONEYDEW;
+      h1 {
+        font-size: 64px;
+        color: $DESIE;
+      }
+      h4 {
+        font-size: 36px;
+        color: $SPACE_CADET;
+      }
+      p {
+        font-size: 24px;
+        color: $QUEEN_BLUE;
+        padding-bottom: 20px;
+      }
+      .answer {
+        width: 380px;
+        cursor: pointer;
+        border-radius: 30px;
+        padding: 15px;
+        border: 2px solid $SPACE_CADET;
+        margin: 20px 0;
+        font-size: 20px;
+        text-align: center;
+        color: $SPACE_CADET;
+        transition: 0.3s;
+        &:hover {
+          background: $SPACE_CADET;
+          color: $HONEYDEW;
+        }
+      }
+    }
+  }
+  .geo {
+    position: absolute;
+  }
+  .rect,.triangle { 
+    animation: 5s rotate infinite linear;
+  }
+  .r0{
+    right: 80px;
+    transform: scale(0.7);
+    top: 80px;
+  }
+  .r1{
+    left: 80px;
+    transform: scale(1);
+    top: 300px;
+  }
+  .arc {
+    animation: 3s wave infinite linear;
+  }
+  .a0{
+    top: 480px;
+    right: 200px;
+    background: $LIGHT_BLUE;
+  }
+  .a1{
+    top: 0px;
+    left: 200px;
+    background: $LIGHT_BLUE;
+  }
+  .t0{
+    transform: scale(0.8);
+    right: -30px;
+    top: 300px;
+  }
+  .t0{
+    transform: scale(0.8);
+    right: -30px;
+    top: 300px;
+  }
+  .t1{
+    transform: scale(0.8);
+    left: 0px;
+    bottom: 30px
+  }
+
+}
+
+.scroll{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: $SPACE_CADET;
+  .bg_triangle{
+    .triangle{
+      position: absolute;
+    }
+    .triangle:nth-child(1){
+      border-color: transparent transparent $DESIE transparent;
+      right: 10%;
+      top: 0%;
+    }
+    .triangle:nth-child(2){
+      border-color: transparent transparent $HONEYDEW transparent;
+      right: 0%;
+      top: 10%;
+    }
+    .triangle:nth-child(3){
+      border-color: transparent transparent $LIGHT_BLUE transparent;
+      right: 20%;
+      top: 30%;
+    }
+    .triangle:nth-child(4){
+      border-color: transparent transparent $QUEEN_BLUE transparent;
+      right: 30%;
+      top: 60%;
+    }
+    .triangle:nth-child(5){
+      border-color: transparent transparent $HONEYDEW transparent;
+      right: 40%;
+      top: 50%;
+    }
+    .triangle:nth-child(5){
+      border-color: transparent transparent $HONEYDEW transparent;
+      right: 60%;
+      top: 20%;
+    }
+    .triangle:nth-child(6){
+      border-color: transparent transparent $DESIE transparent;
+      right: 40%;
+      top: 10%;
+    }
+    .triangle:nth-child(7){
+      border-color: transparent transparent $DESIE transparent;
+      right: 40%;
+      top: 70%;
+    }
+    .triangle:nth-child(8){
+      border-color: transparent transparent $LIGHT_BLUE transparent;
+      right: 80%;
+      top: 75%;
+    }
+    .triangle:nth-child(9){
+      border-color: transparent transparent $DESIE transparent;
+      right: 100%;
+      top: 10%;
+    }
+    .triangle:nth-child(10){
+      border-color: transparent transparent $QUEEN_BLUE transparent;
+      right: 200%;
+      top: 200%;
+    }
+  }
+  .step{
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    h1 {
+      font-size: 64px;
+    } 
+    p {
+      font-size: 24px;
+      padding-bottom: 20px;
+    }
+  }
+  .step_0{
+    opacity: 1;
+    h1{
+      color: $HONEYDEW;
+    }
+  }
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
