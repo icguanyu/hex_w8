@@ -44,6 +44,7 @@ ul,
 li {
   padding: 0;
   margin: 0;
+  user-select: none;
 }
 .process_bar {
   top: 0;
@@ -200,15 +201,16 @@ li {
   .geo {
     position: absolute;
   }
-  .rect,.triangle { 
+  .rect,
+  .triangle {
     animation: 5s rotate infinite linear;
   }
-  .r0{
+  .r0 {
     right: 80px;
     transform: scale(0.7);
     top: 80px;
   }
-  .r1{
+  .r1 {
     left: 80px;
     transform: scale(1);
     top: 300px;
@@ -216,123 +218,264 @@ li {
   .arc {
     animation: 3s wave infinite linear;
   }
-  .a0{
+  .a0 {
     top: 480px;
     right: 200px;
     background: $LIGHT_BLUE;
   }
-  .a1{
+  .a1 {
     top: 0px;
     left: 200px;
     background: $LIGHT_BLUE;
   }
-  .t0{
+  .t0 {
     transform: scale(0.8);
     right: -30px;
     top: 300px;
   }
-  .t0{
+  .t0 {
     transform: scale(0.8);
     right: -30px;
     top: 300px;
   }
-  .t1{
+  .t1 {
     transform: scale(0.8);
     left: 0px;
-    bottom: 30px
+    bottom: 30px;
   }
-
 }
 
-.scroll{
+.scroll {
   display: none;
   position: fixed;
   width: 100%;
   height: 100vh;
   background: $SPACE_CADET;
-  .bg_triangle{
-    .triangle{
+  .bg_triangle {
+    .triangle {
       position: absolute;
+      transform: rotate(45deg);
     }
-    .triangle:nth-child(1){
+    .triangle:nth-child(1) {
       border-color: transparent transparent $DESIE transparent;
       right: 10%;
       top: 0%;
     }
-    .triangle:nth-child(2){
+    .triangle:nth-child(2) {
       border-color: transparent transparent $HONEYDEW transparent;
       right: 0%;
       top: 10%;
     }
-    .triangle:nth-child(3){
+    .triangle:nth-child(3) {
       border-color: transparent transparent $LIGHT_BLUE transparent;
       right: 20%;
       top: 30%;
     }
-    .triangle:nth-child(4){
+    .triangle:nth-child(4) {
       border-color: transparent transparent $QUEEN_BLUE transparent;
       right: 30%;
       top: 60%;
     }
-    .triangle:nth-child(5){
+    .triangle:nth-child(5) {
       border-color: transparent transparent $HONEYDEW transparent;
       right: 40%;
       top: 50%;
     }
-    .triangle:nth-child(5){
+    .triangle:nth-child(5) {
       border-color: transparent transparent $HONEYDEW transparent;
       right: 60%;
       top: 20%;
     }
-    .triangle:nth-child(6){
+    .triangle:nth-child(6) {
       border-color: transparent transparent $DESIE transparent;
       right: 40%;
       top: 10%;
     }
-    .triangle:nth-child(7){
+    .triangle:nth-child(7) {
       border-color: transparent transparent $DESIE transparent;
       right: 40%;
       top: 70%;
     }
-    .triangle:nth-child(8){
+    .triangle:nth-child(8) {
       border-color: transparent transparent $LIGHT_BLUE transparent;
       right: 80%;
       top: 75%;
     }
-    .triangle:nth-child(9){
+    .triangle:nth-child(9) {
       border-color: transparent transparent $DESIE transparent;
       right: 100%;
       top: 10%;
     }
-    .triangle:nth-child(10){
-      border-color: transparent transparent $QUEEN_BLUE transparent;
-      right: 200%;
-      top: 200%;
+  }
+  .big_triangle {
+    position: absolute;
+    border-color: transparent transparent $QUEEN_BLUE transparent;
+    right: 200%;
+    top: 200%;
+  }
+
+  .bg_rect {
+    .rect {
+      position: absolute;
+    }
+    .rect:nth-child(1) {
+      background: $DESIE;
+      right: 10%;
+      top: 0%;
+    }
+    .rect:nth-child(2) {
+      background: $HONEYDEW;
+      right: 0%;
+      top: 10%;
+    }
+    .rect:nth-child(3) {
+      background: $LIGHT_BLUE;
+      right: 20%;
+      top: 30%;
+    }
+    .rect:nth-child(4) {
+      background: $SPACE_CADET;
+      right: 30%;
+      top: 60%;
+    }
+    .rect:nth-child(5) {
+      background: $HONEYDEW;
+      right: 40%;
+      top: 50%;
+    }
+    .rect:nth-child(5) {
+      background: $SPACE_CADET;
+      right: 60%;
+      top: 20%;
+    }
+    .rect:nth-child(6) {
+      background: $DESIE;
+      right: 40%;
+      top: 10%;
+    }
+    .rect:nth-child(7) {
+      background: $SPACE_CADET;
+      right: 40%;
+      top: 70%;
+    }
+    .rect:nth-child(8) {
+      background: $LIGHT_BLUE;
+      right: 80%;
+      top: 75%;
+    }
+    .rect:nth-child(9) {
+      background: $DESIE;
+      right: 100%;
+      top: 10%;
     }
   }
-  .step{
+
+  .bg_arc {
+    .arc {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .arc:nth-child(1) {
+      background: $DESIE;
+      right: 10%;
+      top: 0%;
+    }
+    .arc:nth-child(2) {
+      background: $QUEEN_BLUE;
+      right: 0%;
+      top: 10%;
+    }
+    .arc:nth-child(3) {
+      background: $LIGHT_BLUE;
+      right: 20%;
+      top: 30%;
+    }
+    .arc:nth-child(4) {
+      background: $SPACE_CADET;
+      right: 30%;
+      top: 60%;
+    }
+    .arc:nth-child(5) {
+      background: $QUEEN_BLUE;
+      right: 40%;
+      top: 50%;
+    }
+    .arc:nth-child(5) {
+      background: $SPACE_CADET;
+      right: 60%;
+      top: 20%;
+    }
+    .arc:nth-child(6) {
+      background: $DESIE;
+      right: 40%;
+      top: 10%;
+    }
+    .arc:nth-child(7) {
+      background: $SPACE_CADET;
+      right: 40%;
+      top: 70%;
+    }
+    .arc:nth-child(8) {
+      background: $LIGHT_BLUE;
+      right: 80%;
+      top: 75%;
+    }
+    .arc:nth-child(9) {
+      background: $DESIE;
+      right: 100%;
+      top: 10%;
+    }
+  }
+  .step {
     opacity: 0;
     position: absolute;
     text-align: center;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     h1 {
       font-size: 64px;
-    } 
+    }
     p {
       font-size: 24px;
       padding-bottom: 20px;
     }
   }
-  .step_0{
+  .step_0 {
     opacity: 1;
-    h1{
+    h1 {
       color: $HONEYDEW;
+    }
+    p {
+      color: $DESIE;
+    }
+  }
+  .step_1 {
+    h1 {
+      color: $HONEYDEW;
+    }
+    p {
+      color: $DESIE;
+    }
+  }
+  .step_2 {
+    h1 {
+      color: $SPACE_CADET;
+    }
+    p {
+      color: $DESIE;
+    }
+  }
+  .step_3 {
+    top: 40%;
+    h1 {
+      color: $HONEYDEW;
+    }
+    p {
+      color: $DESIE;
     }
   }
 }
-
 
 @keyframes rotate {
   0% {
@@ -351,5 +494,80 @@ li {
   }
   100% {
     transform: translateY(0%);
+  }
+}
+
+
+.result{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  opacity: 0;
+  background: $SPACE_CADET;
+  .drop_arc{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: -10%;
+  }
+  .drop_arc:nth-child(1){
+    background: $HONEYDEW;
+    left: 10%;
+  }
+  .drop_arc:nth-child(2){
+    background: $QUEEN_BLUE;
+    left: 20%;
+  }
+  .drop_arc:nth-child(3){
+    background: $LIGHT_BLUE;
+    left: 40%;
+  }
+  .drop_arc:nth-child(4){
+    background: $HONEYDEW;
+    left: 65%;
+  }
+  .drop_arc:nth-child(5){
+    background: $LIGHT_BLUE;
+    left: 70%;
+  }
+  .drop_arc:nth-child(6){
+    background: $QUEEN_BLUE;
+    left: 80%;
+  }
+  .drop_arc:nth-child(7){
+    background: $HONEYDEW;
+    left: 90%;
+  }
+  .bottom_arc{
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    bottom: -400px;
+  }
+  .tryagain{
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    border: 1px solid $HONEYDEW;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: .3s;
+    p{
+      color: $HONEYDEW;
+      font-size: 26px;
+    }
+    &:hover{
+      background: $HONEYDEW;
+      p{
+        color: $SPACE_CADET
+      }
+    }
   }
 }

@@ -164,17 +164,18 @@ $(".question").on("click", ".answer", function(e) {
     $('.begin').animate({opacity:0},1000,()=>{
       $('.begin').empty()
       $('.scroll').fadeIn()
+      $('.step_3 h1').empty().append(`${score}分`)
       $('body,html').css({overflow:'auto'})
       $(window).scrollTop(1)
     })
   }
-  
-  
 
   score += this.dataset.score * 1; //*1=轉成數值
   console.log(score)
   
 });
-
-
+$('.tryagain').on('click',function(){
+  window.location.reload()
+  //window.navigate(location)
+})
 
