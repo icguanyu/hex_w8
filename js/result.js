@@ -2,13 +2,14 @@ var resultTimeline = new TimelineMax({
   updated() {},
   onComplete() {}
 });
-resultTimeline.pause();
+//resultTimeline.pause();
 resultTimeline
   .set(".scroll .triangle,.scroll .rect,.scroll .arc", {
     rotation: "45deg",
     x: -1000,
     y: 1000
   })
+  .pause()
   .add("triangle_Go")
   .to(".step_0", 2, {
     opacity: 1

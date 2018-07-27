@@ -162,11 +162,10 @@ $(".question").on("click", ".answer", function(e) {
     $('.process').css({width : (now+1)*33.33+'%'})
   } else {
     $('.begin').animate({opacity:0},1000,()=>{
-      $('.begin').empty()
+      $('.begin').remove()
       $('.scroll').fadeIn()
       $('.step_3 h1').empty().append(`${score}分`)
       $('body,html').css({overflow:'auto'})
-      $(window).scrollTop(1)
     })
   }
 
